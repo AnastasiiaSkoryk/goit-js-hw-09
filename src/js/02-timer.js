@@ -37,6 +37,8 @@ function onStartBtnClick() {
 
 function timer() {
     const diff = new Date(refs.inputEl.value) - Date.now();
+    if (diff <= 0) return;
+    
     const days = addLeadingZero(Math.floor(diff / (1000 * 60 * 60 * 24)));
     const hours = addLeadingZero(Math.floor((diff / (1000 * 60 * 60)) % 24));
     const minutes = addLeadingZero(Math.floor((diff / (1000 * 60)) % 60));
